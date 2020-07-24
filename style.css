@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    /* linear-gradient() создаёт изображение, состоящее из постепенного перехода между двумя или более цветами вдоль прямой линии. */
+     background: linear-gradient(45deg,  #020283,#F50F22); 
+    background-size: 300% 300%;
+    animation: gradient 15s ease infinite; 
+}
+/* Анимация */
+ @keyframes gradient {
+    /* Начальная позиция анимации */
+     0% {
+        background-position: 0 50%;
+    } 
+    /* Середина */
+    50% {
+        background-position: 100% 50%;
+    } 
+    /* Возврат */
+    100% {
+        background-position: 0 50%;
+    }
+} 
+
+.container {
+    width: 100%;
+    margin: 10% auto;
+}
+
+/* Свойство overflow управляет отображением содержания блочного элемента, 
+    если оно целиком не помещается и выходит за область заданных размеров. */
+figure {
+    overflow: hidden; /* hidden - Отображается только область внутри элемента, остальное будет скрыто. */
+    display: inline-block;
+    width: 350px;
+    height: 300px;
+    border: 5px solid black;
+}
+
+    /*   Свойство object-fit определяет, как содержимое заменяемого элемента, 
+    такого как <img> или <video>, должно заполнять контейнер относительно его высоты и ширины. 
+    cover - Элемент увеличивается или уменьшается, чтобы целиком заполнить 
+    заданную область с сохранением пропорций.  */
+figure img {
+object-fit: cover;  
+width: 100%;
+height: 100%;
+transition: transform .9s ease;
+}
+
+figure:hover img {
+     /* scale - Масштабирует элементы, делая их больше или меньше */
+    /* rotate - Поворачивает элементы на заданное количество градусов */
+    transform: scale(1.4) rotate(10deg);
+    cursor: pointer;
+}
